@@ -1,0 +1,44 @@
+<div>
+  
+    <h2>To do Task</h2>
+    <form #taskRef="ngForm" (ngSubmit)= "postToJson(taskRef.value)">
+        <mat-form-field>
+            <mat-label>Id</mat-label>
+            <input matInput type="text"  name="id"  ngModel>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Name</mat-label >
+            <input matInput type="text"   name="name"  ngModel>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Task</mat-label>
+            <input matInput type="textarea"  name="task"  ngModel>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Dead Line</mat-label>
+            <input matInput type="date"  name="deadLine"  ngModel>
+        </mat-form-field>
+    <br>
+            <button type="submit"  mat-stroked-button color="primary">submit</button>
+            <button type="reset"  mat-stroked-button color="secondary">reset</button>
+ 
+    </form>
+</div>
+<div>
+    <table >
+        <tr >
+            <td>id</td>
+            <td>Name</td>
+            <td>Task</td>
+            <td>Dead Line</td>
+
+        </tr>
+<tr *ngFor="let dt of arrayForTask">
+    <td>{{dt.id}}</td>
+    <td>{{dt.name}}</td>
+    <td>{{dt.task}}</td>
+    <td>{{dt.deadLine}}</td>
+</tr>
+<button   mat-stroked-button color="primary" (click)="getData()">load Tasks</button>
+</table>
+</div>
