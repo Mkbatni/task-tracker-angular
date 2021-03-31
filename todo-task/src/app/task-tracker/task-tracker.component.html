@@ -1,7 +1,7 @@
-<div>
+<div style="background-color: beige; padding: 50px;">
   
-    <h2>To do Task</h2>
-    <form #taskRef="ngForm" (ngSubmit)= "postToJson(taskRef.value)">
+    <h2 style=" font-size: 50px; padding: 50px; color: gray">To do Task</h2>
+    <form style="background-color: beige;" #taskRef="ngForm" (ngSubmit)= "postToJson(taskRef.value)">
         <mat-form-field>
             <mat-label>Id</mat-label>
             <input matInput type="text"  name="id"  ngModel>
@@ -24,8 +24,8 @@
  
     </form>
 </div>
-<div>
-    <table >
+<div style="background-color: rgb(250, 244, 244); align-content: center;">
+    <table ng-container matColumnDef="position" >
         <tr >
             <td>id</td>
             <td>Name</td>
@@ -39,6 +39,9 @@
     <td>{{dt.task}}</td>
     <td>{{dt.deadLine}}</td>
 </tr>
-<button   mat-stroked-button color="primary" (click)="getData()">load Tasks</button>
+
 </table>
+</div>
+<div>
+    <button mat-stroked-button color="primary" (click)="getData()">load Tasks</button>
 </div>
